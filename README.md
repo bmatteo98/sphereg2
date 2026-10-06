@@ -6,7 +6,7 @@ velocity functions (SRVFs). The package builds on `sphereg`, the
 implementation of the spherical kernel ridge regression of Matteo, Stöcker and
 Tavakoli (2026, arXiv:2606.00181), and adds the elastic shape regression of
 
-> Matteo, B., Stöcker, A., Pigoli, D. and Tavakoli, S. *Elastic shape regression* (submitted).
+> Matteo, B., Stöcker, A., Pigoli, D. and Tavakoli, S. *Elastic kernel ridge regression, with applications in phonetics* (submitted).
 
 The regression model, its estimation and the alignment algorithms are
 described in the paper and in its Web Appendix; the package documentation

@@ -1,0 +1,51 @@
+Package: sphereg2
+Title: Kernel Ridge Regression for Spherical and Elastic Shape Responses
+Version: 0.2.0
+Authors@R: c(
+    person("Beatrice", "Matteo", , "beatricematteo98@gmail.com", role = "aut"),
+    person("Almond", "Stöcker", , "almond.stoecker@gmail.com", role = c("aut", "cre", "cph")),
+    person("Shahin", "Tavakoli", role = "aut")
+  )
+Description: Nonparametric regression for responses taking values on the
+    unit sphere of a real separable Hilbert space, with covariates in an
+    arbitrary Polish space, and its extension to planar shapes compared
+    elastically. The package builds on 'sphereg', the implementation of the
+    spherical kernel ridge regression of Matteo, Stöcker and Tavakoli (2026)
+    <doi:10.48550/arXiv.2606.00181>: the conditional Fréchet mean is modelled
+    intrinsically as the exponential map of an element of a vector-valued
+    reproducing kernel Hilbert space, and estimated by minimising a
+    penalised empirical risk built from squared geodesic distances. The
+    geometry is supplied by the user as an inner product, so the same
+    code handles directional and compositional data in finite dimensions
+    as well as square-root densities and other functional responses in
+    infinite dimensions; Karhunen-Loève coordinates and low-rank kernel
+    approximations keep the high-dimensional case tractable. Building on
+    the square-root velocity function (SRVF) framework of Srivastava and
+    Klassen (2016) <doi:10.1007/978-1-4939-4020-2>, responses may also be
+    planar shapes analysed elastically, in which case the fit alternates
+    with an alignment of the responses over rotations and
+    reparametrisations, so that the estimated mean is a conditional mean
+    with respect to the elastic shape distance. Tangent-space and
+    unconstrained vector-valued kernel ridge regression are included for
+    comparison, together with cross-validation routines.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+URL: https://github.com/bmatteo98/sphereg2
+BugReports: https://github.com/bmatteo98/sphereg2/issues
+Depends:
+    R (>= 4.1)
+Imports:
+    fdasrvf,
+    grDevices,
+    MASS,
+    parallel,
+    pracma,
+    stats,
+    utils
+Suggests:
+    igraph,
+    pkgload,
+    reticulate
+Config/roxygen2/version: 8.0.0
+RoxygenNote: 7.3.3

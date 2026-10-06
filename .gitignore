@@ -1,0 +1,13 @@
+.Rhistory
+.RData
+.Rproj.user
+.DS_Store
+*.tar.gz
+Rplots.pdf
+# regenerable intermediates
+applications/vt interpolation/frames_contours/
+applications/vt interpolation/vt_contours_video*.mp4
+simulations/simulation elastic spherical regression/results/results_*.RData
+paper figures/*.pdf
+paper figures/*.tex
+paper figures/*.png

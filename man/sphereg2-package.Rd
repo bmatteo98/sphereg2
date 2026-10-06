@@ -17,12 +17,17 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Almond Stöcker \email{almond.stoecker@gmail.com} [copyright holder]
+\strong{Maintainer}: Beatrice Matteo \email{beatricematteo98@gmail.com} [copyright holder]
 
 Authors:
 \itemize{
-  \item Beatrice Matteo \email{beatricematteo98@gmail.com}
-  \item Shahin Tavakoli
+  \item Almond Stöcker \email{almond.stoecker@gmail.com} [copyright holder]
+}
+
+Other contributors:
+\itemize{
+  \item Shahin Tavakoli [thesis advisor]
+  \item Davide Pigoli [thesis advisor]
 }
 
 }

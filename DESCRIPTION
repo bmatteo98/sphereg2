@@ -2,9 +2,10 @@ Package: sphereg2
 Title: Kernel Ridge Regression for Spherical and Elastic Shape Responses
 Version: 0.2.0
 Authors@R: c(
-    person("Beatrice", "Matteo", , "beatricematteo98@gmail.com", role = "aut"),
-    person("Almond", "Stöcker", , "almond.stoecker@gmail.com", role = c("aut", "cre", "cph")),
-    person("Shahin", "Tavakoli", role = "aut")
+    person("Beatrice", "Matteo", , "beatricematteo98@gmail.com", role = c("aut", "cre", "cph")),
+    person("Almond", "Stöcker", , "almond.stoecker@gmail.com", role = c("aut", "cph")),
+    person("Shahin", "Tavakoli", role = "ths"),
+    person("Davide", "Pigoli", role = "ths")
   )
 Description: Nonparametric regression for responses taking values on the
     unit sphere of a real separable Hilbert space, with covariates in an

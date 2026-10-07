@@ -1,0 +1,12 @@
+citHeader("To cite sphereg2 in publications use:")
+
+bibentry(
+  bibtype = "Misc",
+  title   = "Elastic kernel Ridge regression, with applications in phonetics",
+  author  = c(person("Beatrice", "Matteo"), person("Almond", "Stöcker"),
+              person("Davide", "Pigoli"), person("Shahin", "Tavakoli")),
+  year    = "2026",
+  note    = "arXiv preprint arXiv:2610.08386",
+  doi     = "10.48550/arXiv.2610.08386",
+  url     = "https://arxiv.org/abs/2610.08386"
+)

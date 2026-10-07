@@ -10,7 +10,9 @@ Authors@R: c(
 Description: Nonparametric regression for responses taking values on the
     unit sphere of a real separable Hilbert space, with covariates in an
     arbitrary Polish space, and its extension to planar shapes compared
-    elastically. The package builds on 'sphereg', the implementation of the
+    elastically: the elastic kernel ridge regression of Matteo, Stöcker,
+    Pigoli and Tavakoli (2026) <doi:10.48550/arXiv.2610.08386>. The
+    package builds on 'sphereg', the implementation of the
     spherical kernel ridge regression of Matteo, Stöcker and Tavakoli (2026)
     <doi:10.48550/arXiv.2606.00181>: the conditional Fréchet mean is modelled
     intrinsically as the exponential map of an element of a vector-valued

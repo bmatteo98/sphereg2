@@ -942,22 +942,18 @@ sphere_regression = function (X, Y,
         Z <- NULL
         K <- K_
       } else {
-        Z = MASS::Null(C)  # make sure it's orthogonal to the constant: Z contains a basis of the null space of C: CZ =0, Z in R^(px(p-1))
-        lf <- lsfit(K_, rep(1, nrow(K_)), intercept = FALSE)
-        if (all(abs(lf$residuals) > 1e-15)) {
-          Z <- cbind(Z, t(C))
-        }
+        Z = MASS::Null(C)  # basis of the null space of C: C %*% Z = 0, Z in R^(p x (p-1))
+        if (ncol(Z) == 0)
+          stop("The sum-to-zero constraint on the fitted values leaves no free coefficient (the kernel matrix has a single column); use fix_p = TRUE.")
         K = K_ %*% Z # constrain to sum to 0: 1^TK = 0
       }
 
     } else {
       C = colSums(K)
-      if(all(abs(C) > 1e-15)) {
-        Z_ <- MASS::Null(C)
-        lf <- lsfit(K, rep(1, nrow(K)), intercept = FALSE)
-        if(all(abs(lf$residuals) > 1e-15)) {
-          Z_ <- cbind(Z_, t(C))
-        }
+      if(any(abs(C) > 1e-15)) { # otherwise the constraint already holds for every coefficient
+        Z_ <- MASS::Null(C) # basis of the null space of C: C %*% Z_ = 0
+        if (ncol(Z_) == 0)
+          stop("The sum-to-zero constraint on the fitted values leaves no free coefficient: the low-rank approximation of the kernel matrix has a single column; increase subK or use fix_p = TRUE.")
         Z <- Z %*% Z_
         K <- K %*% Z_
       }
@@ -1341,22 +1337,18 @@ cross_val_sphere_regression <- function(X, Y,
             Z <- NULL
             K <- K_
           } else {
-            Z = MASS::Null(C)  # make sure it's orthogonal to the constant: Z contains a basis of the null space of C: CZ =0, Z in R^(px(p-1))
-            lf <- lsfit(K_, rep(1, nrow(K_)), intercept = FALSE)
-            if (all(abs(lf$residuals) > 1e-15)) {
-              Z <- cbind(Z, t(C))
-            }
+            Z = MASS::Null(C)  # basis of the null space of C: C %*% Z = 0, Z in R^(p x (p-1))
+            if (ncol(Z) == 0)
+              stop("The sum-to-zero constraint on the fitted values leaves no free coefficient (the kernel matrix has a single column); use fix_p = TRUE.")
             K = K_ %*% Z # constrain to sum to 0: 1^TK = 0
           }
 
         } else {
           C = colSums(K)
-          if(all(abs(C) > 1e-15)) {
-            Z_ <- MASS::Null(C)
-            lf <- lsfit(K, rep(1, nrow(K)), intercept = FALSE)
-            if(all(abs(lf$residuals) > 1e-15)) {
-              Z_ <- cbind(Z_, t(C))
-            }
+          if(any(abs(C) > 1e-15)) { # otherwise the constraint already holds for every coefficient
+            Z_ <- MASS::Null(C) # basis of the null space of C: C %*% Z_ = 0
+            if (ncol(Z_) == 0)
+              stop("The sum-to-zero constraint on the fitted values leaves no free coefficient: the low-rank approximation of the kernel matrix has a single column; increase subK or use fix_p = TRUE.")
             Z <- Z %*% Z_
             K <- K %*% Z_
           }
